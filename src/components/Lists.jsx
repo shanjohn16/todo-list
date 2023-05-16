@@ -2,12 +2,15 @@ import React from 'react'
 
 const Lists = ({todo}) => {
   return (
-    <div>
-
-        {todo}
-        <button>Delete</button>
-        
-    </div>
+    <>
+        <div>
+          
+          <span>{todo.todo}</span>
+            
+          <button>Delete</button>
+            
+        </div>
+    </>
   )
 }
 
