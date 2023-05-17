@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {nanoid} from 'nanoid'
 import ItemLists from './components/ItemLists'
 import AddTodo from './components/AddTodo'
@@ -19,8 +19,11 @@ const App = () => {
   );
   const [task,setTask] = useState('');
 
-  
 
+ 
+ 
+
+  
   const handleAdd = (event) => {
     event.preventDefault();
     const newItem = { id: nanoid(), todo: task };
@@ -38,11 +41,11 @@ const App = () => {
 
     <>
     
-      <form onSubmit={handleAdd}>
+      
         <input value ={task} onChange={(event)=>{setTask(event.target.value)}} type="text" placeholder='Add a task' />
         <AddTodo handleAdd={handleAdd} />
-      </form>
-      <div>{task}</div>
+      
+      
 
       
 
