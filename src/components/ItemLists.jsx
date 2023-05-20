@@ -1,7 +1,13 @@
 import React from 'react'
 import Lists from './Lists'
 
-const ItemLists = ({todos}) => {
+const ItemLists = ({todos,setTodos}) => {
+
+  const handleDelete = (todoID) =>{
+    
+    console.log(todoID)
+    const updatedTodos = todos.filter((todo) => todo.id !== todoID);
+    setTodos(updatedTodos) }
  
   return (
 
@@ -9,7 +15,7 @@ const ItemLists = ({todos}) => {
       
       Itemlists
       <ul>
-            {todos.map((todo)=>(<li key={todo.id}> <Lists todo = {todo}/> </li>) ) } 
+            {todos.map((todo)=>(<li key={todo.id}> <Lists todo = {todo} handleDelete={handleDelete}/> </li>) ) } 
         </ul>
     </>
     

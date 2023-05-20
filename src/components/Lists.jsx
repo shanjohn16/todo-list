@@ -1,13 +1,20 @@
 import React from 'react'
 
-const Lists = ({todo}) => {
+const Lists = ({todo,handleDelete}) => {
+
+
+ 
+
+
+
+
   return (
     <>
         <div>
           
           <span>{todo.todo}</span>
             
-          <button>Delete</button>
+          <button onClick={()=>handleDelete(todo.id)} >Delete</button>
             
         </div>
     </>
