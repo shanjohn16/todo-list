@@ -13,7 +13,7 @@ const ItemLists = ({todos,setTodos}) => {
 
     <>
       
-      Itemlists
+      
       <ul>
             {todos.map((todo)=>(<li key={todo.id}> <Lists todo = {todo} handleDelete={handleDelete}/> </li>) ) } 
         </ul>

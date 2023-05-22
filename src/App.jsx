@@ -25,8 +25,8 @@ const App = () => {
  
 
   
-  const handleAdd = (event) => {
-    event.preventDefault();
+  const handleAdd = () => {
+    
     const newItem = { id: nanoid(), todo: task };
     const newTodos = [...todos, newItem]; // Update the items array
     setTodos(newTodos);
@@ -47,7 +47,7 @@ const App = () => {
         <Flex direction="row" gap="2">
         
           <Input value ={task} onChange={(event)=>{setTask(event.target.value)}} type="text" placeholder='Add a task' 
-                variant="outline" width="auto" focusBorderColor='purple.200' size = "md" />
+                variant="outline" width="auto" focusBorderColor='purple.200' size = "md" w={400} />
           <AddTodo handleAdd={handleAdd} />
         
         </Flex>

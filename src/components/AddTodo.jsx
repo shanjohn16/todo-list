@@ -5,7 +5,7 @@ import { Button } from '@chakra-ui/react';
 
 const AddTodo = ({handleAdd}) => {
 
-
+  
 
   return (
     <>
