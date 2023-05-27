@@ -4,13 +4,14 @@ import ItemLists from './components/ItemLists'
 import AddTodo from './components/AddTodo'
 import React from 'react'
 import { Flex, Heading, Box, Input} from '@chakra-ui/react'
+import Sidebar from './components/Sidebar'
 
 const App = () => {
   const [todos, setTodos] = useState(
     [
       {
         id: nanoid(),
-        todo: "Todo",
+        todo: "Take a bath",
       },
       {
         id: nanoid(),
@@ -19,10 +20,6 @@ const App = () => {
     ]
   );
   const [task,setTask] = useState('');
-
-
- 
- 
 
   
   const handleAdd = () => {
@@ -41,8 +38,9 @@ const App = () => {
   return (
 
     <>
-    <Box>
-      <Flex direction="column" justify="center" align="center" gap="5" pt="8">
+    <Flex>
+      <Sidebar/>
+      <Flex direction="column" justify="center" align="center" gap="5" pt="8" flex={1}>
         <Heading color="purple.500" >Todo Lists</Heading>
         <Flex direction="row" gap="2">
         
@@ -53,7 +51,7 @@ const App = () => {
         </Flex>
         <ItemLists todos ={todos} setTodos={setTodos} />
       </Flex>
-      </Box>
+      </Flex>
     </>
   )
 }
