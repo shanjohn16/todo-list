@@ -11,7 +11,7 @@ const App = () => {
     [
       {
         id: nanoid(),
-        todo: "Take a bath",
+        todo: "Todo",
       },
       {
         id: nanoid(),
@@ -21,9 +21,13 @@ const App = () => {
   );
   const [task,setTask] = useState('');
 
+
+ 
+ 
+
   
-  const handleAdd = () => {
-    
+  const handleAdd = (event) => {
+    event.preventDefault();
     const newItem = { id: nanoid(), todo: task };
     const newTodos = [...todos, newItem]; // Update the items array
     setTodos(newTodos);
@@ -38,14 +42,15 @@ const App = () => {
   return (
 
     <>
-    <Flex>
-      <Sidebar/>
+    <Flex >
+      <Flex w={350} border="2px" ><Sidebar/></Flex>
+      
       <Flex direction="column" justify="center" align="center" gap="5" pt="8" flex={1}>
         <Heading color="purple.500" >Todo Lists</Heading>
         <Flex direction="row" gap="2">
         
           <Input value ={task} onChange={(event)=>{setTask(event.target.value)}} type="text" placeholder='Add a task' 
-                variant="outline" width="auto" focusBorderColor='purple.200' size = "md" w={400} />
+                variant="outline" width="auto" focusBorderColor='purple.200' size = "md" />
           <AddTodo handleAdd={handleAdd} />
         
         </Flex>
