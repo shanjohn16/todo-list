@@ -7,8 +7,8 @@ const App = () => {
   return (
     <div>
         <Flex >
-            <Flex w={350} border="2px" ><Sidebar/></Flex>
-            <Flex flex={1}> <TodoList/> </Flex>
+            <Flex w={350} border="2px" sx={{minHeight: "100vh"}}><Sidebar/></Flex>
+            <Flex flex={1} mt='-300px'> <TodoList/> </Flex>
 
       
       
